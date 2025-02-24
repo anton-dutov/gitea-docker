@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: kaniko-build
-      uses: actions/action-kaniko@master
+      uses: aevea/action-kaniko@master
       with:
         image:    ${{ env.REGISTRY_IMAGE }}
         username: dutov
