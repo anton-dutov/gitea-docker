@@ -1,0 +1,21 @@
+name: tests
+on: [push]
+
+env:
+  VERSION:  1.23.4
+  REGISTRY_IMAGE: dutov/gitea
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: git-checkout
+      uses: actions/checkout@v4
+
+    - name: kaniko-build
+      uses: actions/action-kaniko@master
+      with:
+        image:    ${{ env.REGISTRY_IMAGE }}
+        username: dutov
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+        tag: ${{ env.VERION }}
