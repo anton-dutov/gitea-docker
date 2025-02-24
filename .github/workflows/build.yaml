@@ -1,6 +1,8 @@
 name: tests
-on: [push]
-
+on:
+  push:
+    tags:
+      - '*'
 env:
   REGISTRY_IMAGE: dutov/gitea
   REGISTRY_VERSION:  1.23.4
