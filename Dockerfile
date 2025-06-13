@@ -1,4 +1,4 @@
-FROM gitea/gitea:1.23.4
+FROM gitea/gitea:1.24.0
 
 RUN apk --no-cache add fail2ban \
     && rm -rf /var/cache/apk/*
